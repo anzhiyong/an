@@ -101,20 +101,20 @@
 //    printf("%d\n", a);
 //}
 
-//#include <stdio.h>
-//void main()
-//{
-//    float x, y, r;
-//    char op;
-//    scanf("%f%c%f", &x, &op, &y);
-//    switch (op) {
-//    case '+': r = x + y; break;
-//    case '-': r = x + y; break;
-//    case '*': r = x + y; break;
-//    case '/': r = x / y;
-//    }
-//    printf("%f", r);
-//}
+#include <stdio.h>
+void main()
+{
+    float x, y, r;
+    char op;
+    scanf("%f%c%f", &x, &op, &y);
+    switch (op) {
+    case '+': r = x + y; break;
+    case '-': r = x + y; break;
+    case '*': r = x + y; break;
+    case '/': r = x / y;
+    }
+    printf("%f", r);
+}
 
 
 //#include<stdio.h>
@@ -156,47 +156,47 @@
 //	}
 //}
 
-#include<stdio.h>
-int main()
-{
-	int year, month, day,n;
-	printf("请输入年份和月份");
-	scanf("%d%d", &year, &month);
-	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-	{
-		n = 1;
-	}
-	else
-	{
-		n = 0;
-	}
-	switch (month)
-	{
-	case 1:day = 31; break;
-	case 2:
-		if (n = 1)
-		{
-			day = 29;
-		}
-		else
-		{
-			day = 28;
-		}
-		
-		break;
-	case 3:day = 31; break;
-	case 4:day = 30; break;
-	case 5:day = 31; break;
-	case 6:day = 30; break;
-	case 7:day = 31; break;
-	case 8:day = 31; break;
-	case 9:day = 30; break;
-	case 10:day = 31; break;
-	case 11:day = 30; break;
-	case 12:day = 31; break;
-	default :printf("错误");
-	}
-	printf("%d", day);
-}
+//#include<stdio.h>
+//int main()
+//{
+//	int year, month, day,n;
+//	printf("请输入年份和月份");
+//	scanf("%d%d", &year, &month);
+//	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+//	{
+//		n = 1;
+//	}
+//	else
+//	{
+//		n = 0;
+//	}
+//	switch (month)
+//	{
+//	case 1:day = 31; break;
+//	case 2:
+//		if (n = 1)
+//		{
+//			day = 29;
+//		}
+//		else
+//		{
+//			day = 28;
+//		}
+//		
+//		break;
+//	case 3:day = 31; break;
+//	case 4:day = 30; break;
+//	case 5:day = 31; break;
+//	case 6:day = 30; break;
+//	case 7:day = 31; break;
+//	case 8:day = 31; break;
+//	case 9:day = 30; break;
+//	case 10:day = 31; break;
+//	case 11:day = 30; break;
+//	case 12:day = 31; break;
+//	default :printf("错误");
+//	}
+//	printf("%d", day);
+//}
 
 
