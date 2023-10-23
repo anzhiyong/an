@@ -1,15 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-void main()
+#include <stdio.h>
+int main()
 {
-    float x, y, r;
-    char op;
-    scanf(¡° % f % c % f¡±, &x, &op, &y);
-    switch (op) {
-    case ¡® + ¡¯: r = x + y; break;
-    case ¡® - ¡¯: r = x + y; break;
-    case ¡®* ¡¯: r = x + y; break;
-    case ¡® / ¡¯: r = x / y;
-    }
-    printf(¡° % f¡±, r);
+    int a = 7;
+    int b = 2;
+    float c = 2.0f;
+    printf("%d\n", 3);
+    printf("%f\n", a / c);
+
+    return 0;
 }
