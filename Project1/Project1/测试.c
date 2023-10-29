@@ -1,27 +1,17 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h> 
-//int main() {
-//	char n;
-//	while ((n = getchar()) != EOF) {
-//		if (n >= 'A' && n <= 'Z' || n >= 'a' && n <= 'z') {
-//			printf("是字母!\n");
-//		}
-//		else {
-//			printf("不是字母！\n");
-//		}
-//		getchar();
-//	}
-//	return 0;
-//}
-
-#include<stdio.h>
-int main()
+#include "stdio.h"
+void main()
 {
-	char cc;
-	scanf("%c", &cc);
-	if (cc >= 'A' && cc <= 'Z' || cc>='a' && cc <= 'z')
-		printf("是字母");
-	else
-		printf("不是字母");
-
+    int i, f1, f2, f3;
+    f1 = 1;
+    f2 = 1;
+    f3 = f1 + f2;
+    printf("%d\n%d\n", f1, f2);
+    for (i = 2; i < 40; i++)
+    {
+        f3 = f1 + f2;
+        printf("%d\n", f3);
+        f1 = f2;
+        f2 = f3;
+    }
 }
