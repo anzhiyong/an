@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include"game.c"
+#include"game.h"
 void menu(void)
 {
 	printf("**************\n");
@@ -9,8 +9,13 @@ void menu(void)
 }
 void game()
 {
-	int iniboord[ROWS][COLS];
-	int iniboord[ROWS][COLS];
+	char mine[ROWS][COLS];//存放布置好的累
+	char show[ROWS][COLS];//
+	//初始化棋盘
+	IntiBoard(mine, ROWS, COLS, '0');
+	IntiBoard(show, ROWS, COLS, '*');
+	//打印棋盘
+	DisplayBoard(show, ROW, COL);
 }
 int main()
 {
