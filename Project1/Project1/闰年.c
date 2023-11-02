@@ -3,13 +3,17 @@
 int main()
 {
 	int year = 0;
-	for (year = 1000; year <= 2000; year++)
+	scanf("%d", &year);
+	
+	if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
 	{
-		if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
-		{
-			printf("%d ",year);
+		printf("%d是闰年 ",year);
 		
-		}
 	}
+	else
+	{
+		printf("%d不是闰年", year);
+	}
+	
 	
 }

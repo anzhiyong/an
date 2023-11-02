@@ -1,22 +1,32 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+int is_prime(int n)//判断素数
+{
+	if (n == 1 || n < 1) 
+	{
+		return 0;
+	}
+	int i = 0;
+	for (i = 2; i < n; i++)
+	{
+		if (n % i == 0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
 int main()
 {
 	int i = 0;
-	int tag = 0;
-	for (i = 100; i <= 200; i++)
+	scanf("%d", &i);
+	if (is_prime(i))
 	{
-		int j;
-		for (j = 2; j < i; j++)
-		{
-			if (i % j == 0)
-			{
-				break;
-			}
-		}
-		if (i == j)
-		{
-			printf("%d ", i);
-		}
+		printf("%d是素数\n", i);
 	}
+	else
+	{
+		printf("%d不是素数\n", i);
+	}
+	
 }
