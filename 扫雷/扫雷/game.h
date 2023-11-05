@@ -9,5 +9,7 @@
 //≥ı ºªØ∆Â≈Ã
 void IntiBoard(char board[ROWS][COLS], int rows, int cols, char set);
 void DisplayBoard(char board[ROWS][COLS], int row, int cols);
+//≤º÷√¿◊
+SetMine(mine, ROW, COL);
 
 

@@ -16,6 +16,8 @@ void game()
 	IntiBoard(show, ROWS, COLS, '*');
 	//¥Ú”°∆Â≈Ã
 	DisplayBoard(show, ROW, COL);
+	//≤º÷√¿◊
+	SetMine(mine, ROW, COL);
 }
 int main()
 {
