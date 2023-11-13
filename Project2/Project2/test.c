@@ -2,5 +2,7 @@
 #include<stdio.h>
 int main()
 {
-	printf("hello world!");
+	int i;
+	scanf("a=%d", &i);
+	printf("%d", i);
 }
