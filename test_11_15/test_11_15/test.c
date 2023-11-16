@@ -109,21 +109,36 @@
 
 
 
+//int main()
+//{
+//	int n = 100;
+//	int* pn = &n;
+//
+//	char ch = 'w';
+//	char* pch = &ch;
+//
+//	float f = 3.14f;
+//	float* pf = &f;
+//
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int(*parr)[10] = &arr;//取出的是数组的地址
+//
+//	//parr 就是数组指针
+//
+//	return 0;
+//}
+
+
 int main()
 {
-	int n = 100;
-	int* pn = &n;
-
-	char ch = 'w';
-	char* pch = &ch;
-
-	float f = 3.14f;
-	float* pf = &f;
-
 	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
-	int(*parr)[10] = &arr;//取出的是数组的地址
 
-	//parr 就是数组指针
+	int* p1 = arr;
 
+	int* p2 = &arr[0];
+
+	int (*p3)[10] = &arr;//p3是数组指针
+	//int (*)[10]   int (*)[10]
+	//
 	return 0;
 }
