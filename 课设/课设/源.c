@@ -185,6 +185,7 @@ void search()
 				return;
 			}
 		}
+
 	}
 	if(i==m)
 		printf("未找到学生信息");
