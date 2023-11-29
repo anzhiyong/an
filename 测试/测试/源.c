@@ -11,3 +11,13 @@
 //从前往后一次完成，如果觉得困难，就再学一段时间再去做
 
 //教务系统  https://edu.bitejiuyeke.com/login
+
+#include<stdio.h>
+int main()
+{
+	int a, b;
+	scanf("%d %o", &a, &b);
+	b += a;
+	printf("%d", b);
+	
+}

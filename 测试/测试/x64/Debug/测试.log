@@ -1,0 +1,54 @@
+﻿  大金开发员.c
+C:\Users\an\Downloads\大金开发员.c(49,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(64,10): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(102,12): warning C4477: “scanf”: 格式字符串“%1f”需要类型“float *”的参数，但可变参数 1 拥有了类型“double *”
+C:\Users\an\Downloads\大金开发员.c(102,12): message : 请考虑在格式字符串中使用“%lf”
+C:\Users\an\Downloads\大金开发员.c(104,12): warning C4477: “scanf”: 格式字符串“%1f”需要类型“float *”的参数，但可变参数 1 拥有了类型“double *”
+C:\Users\an\Downloads\大金开发员.c(104,12): message : 请考虑在格式字符串中使用“%lf”
+C:\Users\an\Downloads\大金开发员.c(106,12): warning C4477: “scanf”: 格式字符串“%1f”需要类型“float *”的参数，但可变参数 1 拥有了类型“double *”
+C:\Users\an\Downloads\大金开发员.c(106,12): message : 请考虑在格式字符串中使用“%lf”
+C:\Users\an\Downloads\大金开发员.c(114,11): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int”
+C:\Users\an\Downloads\大金开发员.c(114,11): warning C4313: "printf": 格式字符串中的 "%s" 与类型为 "int" 的参数 1 冲突
+C:\Users\an\Downloads\大金开发员.c(70,9): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(87,9): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(93,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(98,6): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(100,6): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(102,6): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(104,6): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(106,6): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(118,3): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(67,6): warning C4101: “i”: 未引用的局部变量
+C:\Users\an\Downloads\大金开发员.c(136,10): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 2 拥有了类型“int”
+C:\Users\an\Downloads\大金开发员.c(136,10): warning C4313: "printf": 格式字符串中的 "%s" 与类型为 "int" 的参数 2 冲突
+C:\Users\an\Downloads\大金开发员.c(126,5): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(145,9): error C2106: “=”: 左操作数必须为左值
+C:\Users\an\Downloads\大金开发员.c(153,4): warning C4013: “flose”未定义；假设外部返回 int
+C:\Users\an\Downloads\大金开发员.c(171,14): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 2 拥有了类型“int”
+C:\Users\an\Downloads\大金开发员.c(171,14): warning C4313: "printf": 格式字符串中的 "%s" 与类型为 "int" 的参数 2 冲突
+C:\Users\an\Downloads\大金开发员.c(145,10): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(157,5): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(161,4): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(167,6): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(172,7): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(192,10): error C2065: “renturn”: 未声明的标识符
+C:\Users\an\Downloads\大金开发员.c(220,30): warning C4013: “strmp”未定义；假设外部返回 int
+C:\Users\an\Downloads\大金开发员.c(189,9): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(207,3): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(219,8): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(226,6): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(228,15): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\an\Downloads\大金开发员.c(266,11): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int”
+C:\Users\an\Downloads\大金开发员.c(292,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\an\Downloads\大金开发员.c(294,8): error C2065: “strut”: 未声明的标识符
+C:\Users\an\Downloads\大金开发员.c(294,8): error C2146: 语法错误: 缺少“;”(在标识符“student”的前面)
+C:\Users\an\Downloads\大金开发员.c(294,16): error C2065: “student”: 未声明的标识符
+C:\Users\an\Downloads\大金开发员.c(294,16): error C2146: 语法错误: 缺少“;”(在标识符“t”的前面)
+C:\Users\an\Downloads\大金开发员.c(294,17): error C2065: “t”: 未声明的标识符
+C:\Users\an\Downloads\大金开发员.c(314,13): error C2065: “t”: 未声明的标识符
+C:\Users\an\Downloads\大金开发员.c(314,13): error C2440: “=”: 无法从“student”转换为“int”
+C:\Users\an\Downloads\大金开发员.c(316,20): error C2065: “t”: 未声明的标识符
+C:\Users\an\Downloads\大金开发员.c(316,18): error C2440: “=”: 无法从“int”转换为“student”
+C:\Users\an\Downloads\大金开发员.c(334,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\an\Downloads\大金开发员.c(342,9): warning C4013: “frof”未定义；假设外部返回 int
+C:\Users\an\Downloads\大金开发员.c(242,1): fatal  error C1075: “{”: 未找到匹配令牌
