@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 //int main()
 //{
 //	int* p = (int*)malloc(40);
@@ -23,14 +24,15 @@
 //}
 
 
-void GetMemory(static char* p)
+char* GetMemory(char* p)
 {
 	p = (char*)malloc(100);
+	return p;
 }
 int main()
 {
 	char* str = NULL;
-	GetMemory(str);
+	str = GetMemory(str);
 	strcpy(str, "hello world");
 	printf(str);
 

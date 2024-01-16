@@ -1,4 +1,2 @@
 ﻿  源.c
-D:\code\legend\21.动态内存管理\21.动态内存管理\源.c(26,30): warning C4042: “p”: 有坏的存储类
-D:\code\legend\21.动态内存管理\21.动态内存管理\源.c(34,2): warning C4013: “strcpy”未定义；假设外部返回 int
   21.动态内存管理.vcxproj -> D:\code\legend\21.动态内存管理\x64\Debug\21.动态内存管理.exe

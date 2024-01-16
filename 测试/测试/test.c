@@ -64,26 +64,38 @@
 //}
 
 //ÄæÐò
-void nixu(int arr[], int sz)
+//void nixu(int arr[], int sz)
+//{
+//	int i = 0, j = sz - 1;
+//	while (i < j)
+//	{
+//		int tem;
+//		tem = arr[i];
+//		arr[i] = arr[j];
+//		arr[j] = tem;
+//		i++;
+//		j--;
+//	}
+//}
+//int main()
+//{
+//	int arr[5] = { 8,6,5,4,1 };
+//	int i;
+//	nixu(arr, 5);
+//	for (i = 0; i < 5; i++)
+//		{
+//			printf("%d ", arr[i]);
+//		}
+//}
+#include<stdlib.h>
+int* getConcatenation(int* nums, int numsSize, int* returnSize) 
 {
-	int i = 0, j = sz - 1;
-	while (i < j)
+	*returnSize = 2 * numsSize;
+	nums = (int*)realloc(nums, sizeof(int) * numsSize * 2);
+	int i = 0;
+	for (i = 0; i < numsSize; i++)
 	{
-		int tem;
-		tem = arr[i];
-		arr[i] = arr[j];
-		arr[j] = tem;
-		i++;
-		j--;
+		nums[numsSize + i] = nums[i];
 	}
-}
-int main()
-{
-	int arr[5] = { 8,6,5,4,1 };
-	int i;
-	nixu(arr, 5);
-	for (i = 0; i < 5; i++)
-		{
-			printf("%d ", arr[i]);
-		}
+	return nums;
 }
