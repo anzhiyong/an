@@ -87,15 +87,45 @@
 //			printf("%d ", arr[i]);
 //		}
 //}
-#include<stdlib.h>
-int* getConcatenation(int* nums, int numsSize, int* returnSize) 
-{
-	*returnSize = 2 * numsSize;
-	nums = (int*)realloc(nums, sizeof(int) * numsSize * 2);
-	int i = 0;
-	for (i = 0; i < numsSize; i++)
-	{
-		nums[numsSize + i] = nums[i];
-	}
-	return nums;
+//#include<stdlib.h>
+//int* getConcatenation(int* nums, int numsSize, int* returnSize) 
+//{
+//	*returnSize = 2 * numsSize;
+//	nums = (int*)realloc(nums, sizeof(int) * numsSize * 2);
+//	int i = 0;
+//	for (i = 0; i < numsSize; i++)
+//	{
+//		nums[numsSize + i] = nums[i];
+//	}
+//	return nums;
+//}
+
+#include <stdio.h>  
+
+int count_squares(int l, int r) {
+    int count = 0;
+    for (int i = l; i <= r; i++) {
+        if (i * i <= r) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    int n, l, r;
+    int arr[100];
+    do {
+        scanf("%d", &n);
+
+        for (int i = 0; i < n; i++) {
+            scanf("%d,%d", &l, &r);
+            arr[i] = count_squares(l, r);
+        }
+        n--;
+    } while (n);
+    for (int i = 0; i < n; i++) {
+        printf("%d\n", arr[i]);
+    }
+    return 0;
 }
