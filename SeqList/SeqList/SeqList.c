@@ -5,7 +5,15 @@ void SLInit(SL* ps) {
 	ps->capacity = 0;
 	ps->size = 0;
 }
+void SLDestroy(SL* ps) {
+	assert(ps);
 
+	if (ps->arr) {
+		free(ps->arr);
+	}
+	ps->arr = NULL;
+	ps->size = ps->capacity = 0;
+}
 void SLPrintf(SL* ps) {
 	for (int i = 0; i < ps->size; i++) {
 		printf("%d ", ps->arr[i]);
@@ -73,7 +81,7 @@ void SLInsert(SL* ps, int pos, SLDataType x) {
 	ps->size++;
 }
 //指定位置删除
-void SLErase(SL* ps, int pos) {
+void SLErase(SL* ps, int pos) {  
 	assert(ps);
 	assert(pos >= 0 && pos < ps->size);
 	//把pos以后的数据往前挪

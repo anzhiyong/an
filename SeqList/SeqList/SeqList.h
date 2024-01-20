@@ -1,7 +1,10 @@
+#pragma once
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #include<assert.h>
+#include"Contact.h"
 //静态顺序表
 //#define N 7
 //typedef int SLDataType;
@@ -11,7 +14,8 @@
 //};
 
 //动态顺序表
-typedef int SLDataType;
+//typedef int SLDataType;
+typedef Info SLDataType;
 typedef struct SeqList {
 	SLDataType* arr;
 	int capacity;   //记录顺序表的空间大小
@@ -20,6 +24,7 @@ typedef struct SeqList {
 //顺序表的初始化和销毁
 void SLInit(SL* ps);
 void SLPrintf(SL* ps);
+void SLDestroy(SL* ps);
 
 //扩容 
 void SLCheckCapacity(SL* ps);
