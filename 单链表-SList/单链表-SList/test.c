@@ -22,10 +22,31 @@ void SList01()
 void slttest()
 {
 	SLTNode* plist = NULL;
-	SLTPushBack(&plist, 8);
+	SLTPushBack(&plist, 1);
+	SLTPushBack(&plist, 2);
+	SLTPushBack(&plist, 3);
+	SLTPushBack(&plist, 4);
 	SLTPrint(plist);
-	SLTPushFront(&plist, 10);
+	SLTNode* ret = SLTFind(&plist, 3);
+	SLTEraseAfter(ret);
 	SLTPrint(plist);
+	SListDesTroy(&plist);
+	SLTPrint(plist);
+	/*SLTPushFront(&plist, 10);
+	SLTPrint(plist);
+	SLTNode* ret = SLTFind(&plist, 10);
+	if (ret)
+	{
+		printf("找到了\n");
+	}
+	else
+	{
+		printf("没找到\n");
+	}
+	SLTInsertAfter(ret, 5);
+	SLTPrint(plist);
+	SLTErase(&plist, ret);
+	SLTPrint(plist);*/
 }
 
 int main()

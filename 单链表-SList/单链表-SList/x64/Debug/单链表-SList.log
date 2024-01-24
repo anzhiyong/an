@@ -1,4 +1,7 @@
 ﻿  SList.c
   test.c
   正在生成代码...
+D:\code\legend\单链表-SList\单链表-SList\SList.c(83,28): warning C4028: 形参 1 与声明不同
+D:\code\legend\单链表-SList\单链表-SList\test.c(30,25): warning C4047: “函数”:“SLTNode *”与“SLTNode **”的间接级别不同
+D:\code\legend\单链表-SList\单链表-SList\test.c(30,25): warning C4024: “SLTFind”: 形参和实参 1 的类型不同
   单链表-SList.vcxproj -> D:\code\legend\单链表-SList\x64\Debug\单链表-SList.exe
