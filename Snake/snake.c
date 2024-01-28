@@ -42,25 +42,81 @@ void CreateMap()
 		wprintf(L"%c", WALL);
 	}
 	//左
-	for (int i = 0; i <= 26; i ++)
+	for (int i = 1; i <= 25; i ++)
 	{
 		SetPos(0, i);
 		wprintf(L"%c", WALL);
 	}
 	//右
-	for (int i = 0; i <= 26; i++)
+	for (int i = 1; i <= 25; i++)
 	{
 		SetPos(56, i);
 		wprintf(L"%c", WALL);
 	}
 }
 
+void InitSnake(pSnake ps)
+{
+	//创建五个蛇神节点
+	pSnakeNode cur = NULL;
+	for (int i = 0; i < 5; i++)
+	{
+		cur = (pSnakeNode)malloc(sizeof(SnakeNode));
+		if (cur == NULL)
+		{
+			perror("InitSnake:malloc");
+			return;
+		}
+		cur->x = POS_X + 2 * i;
+		cur->y = POS_Y;
+		cur->next = NULL;
+
+		//头插法
+		if (ps->pSnake == NULL)
+		{
+			ps->pSnake = cur;
+		}
+		else
+		{
+			cur->next = ps->pSnake;
+			ps->pSnake = cur;
+		}
+	}
+	//打印蛇的身体
+	cur = ps->pSnake;
+	while (cur)
+	{
+		SetPos(cur->x, cur->y);
+		wprintf(L"%lc", BODY);
+		cur = cur->next;
+	}
+	//贪吃蛇其他信息初始化
+	ps->dir = RIGHT;
+	ps->FoodWeight = 10;
+	ps->pFood = NULL;
+	ps->Score = 0;
+	ps->SleepTime = 200;
+	ps->state = OK;
+}
+
+void CreateFood(pSnake ps)
+{
+	int x = 0;
+	int y = 0;
+
+	do
+	{
+		x = rand() % 53 + 2;
+		y = rand() % 25 + 1;
+	} while (x % 2 != 2);
+
+}
 
 void GameStart(pSnake ps)
 {
 	//设置控制台
 	system("mode con cols=100 lines=30");
-	system("title 贪吃蛇");
+	system("title 贪吃蛇@安");
 	//隐藏光标
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO cursorinfo;
@@ -72,9 +128,9 @@ void GameStart(pSnake ps)
 	//绘制地图
 	CreateMap();
 	//初始化蛇
-
+	InitSnake(ps);
 	//创建食物
-
+	CreateFood(ps);
 
 	getchar();
 }
