@@ -104,11 +104,37 @@ void CreateFood(pSnake ps)
 	int x = 0;
 	int y = 0;
 
+again:
 	do
 	{
 		x = rand() % 53 + 2;
-		y = rand() % 25 + 1;
-	} while (x % 2 != 2);
+		y = rand() % 24 + 1;
+	} while (x % 2 != 0);
+
+	//判断食物是否在蛇身上
+	pSnakeNode cur = ps->pSnake;
+	while (cur)
+	{
+		if (x == cur->x && y == cur->y)
+		{
+			goto again;
+		}
+		cur = cur->next;
+	}
+
+	//创建食物
+	pSnakeNode pFood = (pSnakeNode)malloc(sizeof(SnakeNode));
+	if (pFood == NULL)
+	{
+		perror("CreateFood():malloc()");
+		return;
+	}
+	pFood->x = x;
+	pFood->y = y;
+
+	ps->pFood = pFood;
+	SetPos(x, y);
+	wprintf(L"%c", FOOD);
 
 }
 
@@ -131,6 +157,241 @@ void GameStart(pSnake ps)
 	InitSnake(ps);
 	//创建食物
 	CreateFood(ps);
+}
 
-	getchar();
+void PrintHelpInfo()
+{
+	SetPos(60, 15);
+	printf("1.不能撞墙 不能撞自己");
+	SetPos(60, 16);
+	printf("2.用上下左右控制蛇的方向");
+	SetPos(60, 17);
+	printf("3.f3加速 f4减速");
+	SetPos(60, 19);
+	printf("版权@an");
+}
+
+void Pause()//游戏暂停
+{
+	while (1)
+	{
+		Sleep(200);
+		if (KEY_PRESS(VK_SPACE))
+		{
+			break;
+		}
+	}
+}
+
+int NextIsFood(pSnake ps, pSnakeNode pNext)
+{
+	if (ps->pFood->x == pNext->x && ps->pFood->y == pNext->y)
+		return 1;
+	else
+		return 0;
+}
+
+void EatFood(pSnake ps, pSnakeNode pNext)
+{
+	pNext->next = ps->pSnake;
+	ps->pSnake = pNext;
+	
+	pSnakeNode cur = ps->pSnake;
+	while (cur)
+	{
+		SetPos(cur->x, cur->y);
+		wprintf(L"%c", BODY);
+		cur = cur->next;
+	}
+	ps->Score += ps->FoodWeight;
+
+	//释放掉旧食物
+	free(ps->pFood);
+	//创建新食物;
+	CreateFood(ps);
+}
+
+void NotEatFood(pSnake ps, pSnakeNode pNext)
+{
+	pNext->next = ps->pSnake;
+	ps->pSnake = pNext;
+
+	pSnakeNode cur = ps->pSnake;
+	while (cur->next->next)
+	{
+		SetPos(cur->x, cur->y);
+		wprintf(L"%c", BODY);
+		cur = cur->next;
+	}
+	SetPos(cur->next->x, cur->next->y);
+	printf("  ");
+	free(cur->next);
+	cur->next = NULL;
+}
+
+void KillByWall(pSnake ps)
+{
+	if (ps->pSnake->x == 0 ||
+		ps->pSnake->x == 56 ||
+		ps->pSnake->y == 0 ||
+		ps->pSnake->y == 26)
+	{
+		ps->state = KILL_BY_WALL;
+	}
+}
+
+void KillBySelf(pSnake ps)
+{
+	pSnakeNode cur = ps->pSnake->next;
+	while (cur)
+	{
+		if (cur->x == ps->pSnake->x && cur->y == ps->pSnake->y)
+		{
+			ps->state = KILL_BY_SELF;
+			return;
+		}
+		cur = cur->next;
+	}
+}
+void SnakeMove(pSnake ps)
+{
+	pSnakeNode pNext = (pSnakeNode)malloc(sizeof(SnakeNode));
+	if (pNext == NULL)
+	{
+		perror("SnakeMove():malloc:");
+		return;
+	}
+	pNext->next = NULL;
+	switch (ps->dir)
+	{
+	case UP:
+		pNext->x = ps->pSnake->x;
+		pNext->y = ps->pSnake -> y - 1;
+		break;
+	case DOWN:
+		pNext->x = ps->pSnake->x;
+		pNext->y = ps->pSnake -> y + 1;
+		break;
+	case LEFT:
+		pNext->x = ps->pSnake->x - 2;
+		pNext->y = ps->pSnake->y;
+		break;
+	case RIGHT:
+		pNext->x = ps->pSnake->x + 2;
+		pNext->y = ps->pSnake->y;
+		break;
+	}
+	//下一个坐标处是否是食物
+	if (NextIsFood(ps, pNext))
+	{
+		//是食物就吃掉
+		EatFood(ps, pNext);
+	}
+	else
+	{
+		//不是，正常走
+		NotEatFood(ps, pNext);
+	}
+
+	//检测撞墙
+	KillByWall(ps);
+	//是否撞到自己
+	KillBySelf(ps);
+}
+
+void GameRun(pSnake ps)
+{
+	//打印帮助信息
+	PrintHelpInfo();
+	
+	do
+	{
+		//当前的分数情况
+		SetPos(60, 10);
+		printf("总分：%5d", ps->Score);
+		SetPos(60, 11);
+		printf("食物的分值：%02d", ps->FoodWeight);
+		//检测按键
+		if (KEY_PRESS(VK_UP) && ps->dir != DOWN)
+		{
+			ps->dir = UP;
+		}
+		else if (KEY_PRESS(VK_DOWN) && ps->dir != UP)
+		{
+			ps->dir = DOWN;
+		}
+		else if (KEY_PRESS(VK_LEFT) && ps->dir != RIGHT)
+		{
+			ps->dir = LEFT;
+		}
+		else if (KEY_PRESS(VK_RIGHT) && ps->dir != LEFT)
+		{
+			ps->dir = RIGHT;
+		}
+		else if (KEY_PRESS(VK_ESCAPE))
+		{
+			ps->state = ESC;
+			break;
+		}
+		else if (KEY_PRESS(VK_SPACE))
+		{
+			//暂停和恢复游戏
+			Pause();
+		}
+		else if (KEY_PRESS(VK_F3))
+		{
+			if (ps->SleepTime >= 80 )
+			{
+				ps->SleepTime -= 30;
+				ps->FoodWeight += 2;
+			}
+			
+		}
+		else if (KEY_PRESS(VK_F4))
+		{
+			if (ps->FoodWeight > 2)
+			{
+				ps->SleepTime += 30;
+				ps->FoodWeight -= 2;
+			}
+		}
+		//走一步
+		SnakeMove(ps);
+		//休眠一下
+		Sleep(ps->SleepTime);
+		
+	} while (ps->state == OK);
+	
+}
+
+void GameEnd(pSnake ps)
+{
+	SetPos(15, 12);
+	switch (ps->state)
+	{
+	case ESC:
+		printf("主动退出游戏\n");
+		break;
+	case KILL_BY_WALL:
+		printf("很遗憾，撞墙了，游戏结束\n");
+		break;
+	case KILL_BY_SELF:
+		printf("很遗憾，撞到自己，游戏结束\n");
+		break;
+	}
+
+	//释放
+	pSnakeNode cur = ps->pSnake;
+	pSnakeNode del = NULL;
+
+	while (cur)
+	{
+		del = cur;
+		cur = cur->next;
+		free(del);
+	}
+
+	free(ps->pFood);
+	ps = NULL;
+
 }
