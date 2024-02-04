@@ -8,10 +8,10 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"${file}",
+				"${file}",   //通过把"${file}"修改为"${workspaceFolder}\\*.c"，可以构建当前工作区中的所有C文件
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
-			],
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"  //${workspaceFolder}\\myProgram.exe  可以把编译输出的文件名改为myProgram.exe
+			],                                         //${workspaceFolder}\\${workspaceRootFolderName}.exe  可以把编译输出的文件名改为myProgram.exe
 			"options": {
 				"cwd": "C:/mingw64/bin"
 			},
