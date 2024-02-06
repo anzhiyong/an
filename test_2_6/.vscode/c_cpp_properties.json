@@ -19,7 +19,7 @@
         {
             "name": "c++",
             "includePath": [
-                "${workspaceFolder}/**"
+                "d:/code/legend/test_2_4/**"
             ],
             "defines": [
                 "_DEBUG",
