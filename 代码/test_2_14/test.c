@@ -266,3 +266,269 @@
 //     return 0;  
 // }
 
+// #include <stdio.h>  
+  
+// int main() {  
+//     int num1, num2;  
+  
+//     // 从用户获取两个整数  
+//     printf("请输入两个整数（用空格分隔）：");  
+//     scanf("%d %d", &num1, &num2);  
+  
+//     // 检查num1是否能整除num2  
+//     if (num2 % num1 == 0) {  
+//         printf("%d 能被 %d 整除。\n", num2, num1);  
+//     } else {  
+//         printf("%d 不能被 %d 整除。\n", num2, num1);  
+//     }  
+  
+//     return 0;  
+// }
+
+
+// #include <stdio.h>  
+// #include <ctype.h> // 包含tolower()函数的头文件  
+  
+// int main() {  
+//     char ch;  
+  
+//     // 从用户获取一个字符  
+//     printf("请输入一个字符：");  
+//     scanf("%c", &ch);  
+  
+//     // 检查字符是否为大写字母  
+//     if (isupper(ch)) {  
+//         // 如果是大写字母，则转换为小写字母  
+//         ch = tolower(ch);  
+//         printf("转换后的小写字母是：%c\n", ch);  
+//     } else {  
+//         // 如果不是大写字母，则不转换  
+//         printf("输入的字符不是大写字母，不转换。\n");  
+//     }  
+  
+//     return 0;  
+// }
+
+// #include <stdio.h>  
+// #include <ctype.h> // 包含isalpha()和isdigit()函数的头文件  
+  
+// int main() {  
+//     char ch;  
+  
+//     // 从键盘读取一个字符  
+//     printf("请输入一个字符：");  
+//     scanf("%c", &ch);  
+  
+//     // 检查字符是否是字母  
+//     if (isalpha(ch)) {  
+//         // 如果是字母，输出其对应的ASCII码  
+//         printf("字符 '%c' 对应的ASCII码是：%d\n", ch, ch);  
+//     }  
+//     // 检查字符是否是数字  
+//     else if (isdigit(ch)) {  
+//         // 如果是数字，按原样输出  
+//         printf("字符 '%c' 是一个数字，按原样输出：%c\n", ch, ch);  
+//     }  
+//     // 如果既不是字母也不是数字  
+//     else {  
+//         // 输出提示信息  
+//         printf("输入错误！\n");  
+//     }  
+  
+//     return 0;  
+// }
+
+// #include <stdio.h>  
+  
+// int main() {  
+//     int a, b, c, temp;  
+  
+//     // 从用户获取三个整数  
+//     printf("请输入三个整数（用空格分隔）：");  
+//     scanf("%d %d %d", &a, &b, &c);  
+  
+//     // 比较a和b，如果a比b大，则交换它们的值  
+//     if (a > b) {  
+//         temp = a;  
+//         a = b;  
+//         b = temp;  
+//     }  
+  
+//     // 现在a和b中的值要么是正确的，要么是接近正确的，我们需要检查c  
+//     // 比较a和c，如果a比c大，则交换它们的值  
+//     if (a > c) {  
+//         temp = a;  
+//         a = c;  
+//         c = temp;  
+  
+//         // 由于我们可能已经交换了a和b，因此现在需要再次检查a和b  
+//         if (a > b) {  
+//             temp = a;  
+//             a = b;  
+//             b = temp;  
+//         }  
+//     }  
+  
+//     // 现在，b和c中的值要么是正确的，要么是接近正确的，我们只需要检查b和c  
+//     // 比较b和c，如果b比c大，则交换它们的值  
+//     if (b > c) {  
+//         temp = b;  
+//         b = c;  
+//         c = temp;  
+//     }  
+  
+//     // 输出排序后的值  
+//     printf("从小到大排序后的数字是：%d %d %d\n", a, b, c);  
+  
+//     return 0;  
+// }
+
+
+// #include <stdio.h>  
+// #include <string.h>  
+// #include <ctype.h>  
+  
+// int main() {  
+//     char firstChar, secondChar;  
+//     int matched = 0;  
+  
+//     // 星期几的英文单词数组  
+//     char *weekdays[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};  
+  
+//     // 提示用户输入第一个字符  
+//     printf("please input first character: ");  
+//     scanf(" %c", &firstChar); // 注意在%c前面有一个空格，用来跳过前面的空白字符  
+  
+//     // 将字符转换为小写，方便比较  
+//     firstChar = tolower(firstChar);  
+  
+//     // 遍历星期几数组，匹配第一个字符  
+//     for (int i = 0; i < 7; ++i) {  
+//         if (weekdays[i][0] == firstChar) {  
+//             matched = 1; // 表示找到了匹配的星期几  
+//             printf("Matched first character for '%s'. ", weekdays[i]);  
+  
+//             // 如果单词只有一个字符，则直接输出  
+//             if (strlen(weekdays[i]) == 1) {  
+//                 printf("It's %s.\n", weekdays[i]);  
+//                 break;  
+//             }  
+  
+//             // 提示用户输入第二个字符  
+//             printf("please input second character: ");  
+//             scanf(" %c", &secondChar); // 注意在%c前面有一个空格，用来跳过前面的空白字符  
+//             secondChar = tolower(secondChar); // 将字符转换为小写  
+  
+//             // 匹配第二个字符  
+//             if (weekdays[i][1] == secondChar) {  
+//                 printf("It's %s.\n", weekdays[i]);  
+//                 break;  
+//             } else {  
+//                 printf("Second character doesn't match for '%s'.\n", weekdays[i]);  
+//             }  
+//         }  
+//     }  
+  
+//     // 如果没有找到匹配的星期几  
+//     if (!matched) {  
+//         printf("Illegal input!\n");  
+//     }  
+  
+//     return 0;  
+// }
+
+
+
+
+// #include<stdio.h>
+ 
+// int main()
+// {
+//     int i=4,k=0,c=0;
+//     char s[18];
+//     scanf("%s",s);
+//     while(s[i]){
+//           if(s[i] == '-')break;
+//           c = c*10 + s[i]-'0';
+//           i++;
+//     }
+//     switch(c){
+//            case   0:
+//            case   1:printf("English Region\n");
+//                     break;
+//            case   2:printf("French Region\n");
+//                     break;
+//            case   4:printf("Japan\n");
+//                     break;
+//            case   7:printf("China\n");
+//                     break;
+//            case  89:printf("South Korea\n");
+//                     break;
+//            case 957:
+//            case 986:printf("Taiwan\n");
+//                     break;
+//            case 962:
+//            case 988:printf("Hong Kong\n");
+//                     break;
+//            default :printf("Bhutan\n");
+//                     break;
+//     }
+    
+//     return 0;
+// }
+
+// #include "stdio.h"
+// int main() {
+// // your code
+//   double data1,data2;
+//   char op;
+//   scanf("%lf %c %lf",&data1,&op,&data2);
+//   if(op == '/' && data2 == 0)
+//   {
+//     printf("Error.");
+//     return 0;
+//   }
+//   switch (op)
+//     {
+//     case '+':
+//         printf("%.2lf",data1+data2);
+//         break;
+//     case '-':
+//         printf("%.2f",data1-data2);
+//         break;
+//     case '*':
+//         printf("%.2f",data1*data2);
+//         break;
+//     case '/':
+//         printf("%.2lf",data1/data2);
+//         break;
+//     default:
+//         break;
+//     }
+//     return 0;
+// }
+
+
+// #include<stdio.h>
+// #include<stdlib.h>
+
+// int main()
+// {
+//     float p,w,s,d,f;
+//     int i;
+//     scanf("%f %f %f",&p,&w,&s);
+//     i = 0*(s<250)+1*(s>=250&&s<500)+2*(s>=500&&s<1000)+3*(s>=1000&&s<2000)+4*(s>=2000&&s<3000)+5*(s>=3000);
+//     switch(i)
+//     {
+//         case 0:d = 0.00;break;
+//         case 1:d = 0.02;break;
+//         case 2:d = 0.05;break;
+//         case 3:d = 0.08;break;
+//         case 4:d = 0.10;break;
+//         case 5:d = 0.15;break;
+//         default :;
+//     }
+//     f = p*w*s*(1-d);
+//     printf("%.2f\n",f);
+//     return 0;
+// }
