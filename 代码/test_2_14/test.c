@@ -217,3 +217,52 @@
 
 // 	return 0;
 // }
+
+// #include<stdio.h>
+// //需要引入的文件
+// //如提示运行通过，但解题失败，认真对比预期输出和实际输出之间的差异
+// #include <stdio.h>  
+  
+// int main() {  
+//     double num1, num2;  
+//     double temp;  
+  
+//     // 从键盘读入两个实数  
+//     scanf("%lf %lf", &num1, &num2);  
+  
+//     // 检查两个数的大小，并按从小到大的顺序交换它们  
+//     if (num1 > num2) {  
+//         temp = num1;  
+//         num1 = num2;  
+//         num2 = temp;  
+//     }  
+  
+//     // 输出两个数，保留两位小数  
+//     printf("%.2lf %.2lf\n", num1, num2);  
+  
+//     return 0;  
+// }
+
+// #include <stdio.h>  
+// #include <ctype.h> // 包含isupper()和tolower()函数的头文件  
+  
+// int main() {  
+//     char ch;  
+  
+//     // 从键盘读取一个字符  
+//     printf("请输入一个字符：");  
+//     scanf("%c", &ch);  
+  
+//     // 检查字符是否为大写字母  
+//     if (isupper(ch)) {  
+//         // 如果是大写字母，则转换为小写字母  
+//         ch = tolower(ch);  
+//         printf("转换后的小写字母是：%c\n", ch);  
+//     } else {  
+//         // 如果不是大写字母，则不转换  
+//         printf("输入的字符不是大写字母，不转换。\n");  
+//     }  
+  
+//     return 0;  
+// }
+
