@@ -73,38 +73,147 @@
 // }
 
 
-#include <stdio.h>  
+// #include <stdio.h>  
   
-int main() {  
-    int num;  
-    printf("请输入一个整数：");  
-    scanf("%d", &num);  
+// int main() {  
+//     int num;  
+//     printf("请输入一个整数：");  
+//     scanf("%d", &num);  
   
-    int divisibleBy3 = (num % 3 == 0);  
-    int divisibleBy5 = (num % 5 == 0);  
-    int divisibleBy7 = (num % 7 == 0);  
+//     int divisibleBy3 = (num % 3 == 0);  
+//     int divisibleBy5 = (num % 5 == 0);  
+//     int divisibleBy7 = (num % 7 == 0);  
   
-    if (divisibleBy3 && divisibleBy5 && divisibleBy7) {  
-        printf("能同时被3，5，7整除。\n");  
-    } else if ((divisibleBy3 && divisibleBy5) || (divisibleBy3 && divisibleBy7) || (divisibleBy5 && divisibleBy7)) {  
-        if (divisibleBy3 && divisibleBy5) {  
-            printf("能被3和5整除。\n");  
-        } else if (divisibleBy3 && divisibleBy7) {  
-            printf("能被3和7整除。\n");  
-        } else if (divisibleBy5 && divisibleBy7) {  
-            printf("能被5和7整除。\n");  
-        }  
-    } else if (divisibleBy3 || divisibleBy5 || divisibleBy7) {  
-        if (divisibleBy3) {  
-            printf("能被3整除。\n");  
-        } else if (divisibleBy5) {  
-            printf("能被5整除。\n");  
-        } else if (divisibleBy7) {  
-            printf("能被7整除。\n");  
-        }  
-    } else {  
-        printf("不能被3，5，7任一个整除。\n");  
-    }  
+//     if (divisibleBy3 && divisibleBy5 && divisibleBy7) {  
+//         printf("能同时被3，5，7整除。\n");  
+//     } else if ((divisibleBy3 && divisibleBy5) || (divisibleBy3 && divisibleBy7) || (divisibleBy5 && divisibleBy7)) {  
+//         if (divisibleBy3 && divisibleBy5) {  
+//             printf("能被3和5整除。\n");  
+//         } else if (divisibleBy3 && divisibleBy7) {  
+//             printf("能被3和7整除。\n");  
+//         } else if (divisibleBy5 && divisibleBy7) {  
+//             printf("能被5和7整除。\n");  
+//         }  
+//     } else if (divisibleBy3 || divisibleBy5 || divisibleBy7) {  
+//         if (divisibleBy3) {  
+//             printf("能被3整除。\n");  
+//         } else if (divisibleBy5) {  
+//             printf("能被5整除。\n");  
+//         } else if (divisibleBy7) {  
+//             printf("能被7整除。\n");  
+//         }  
+//     } else {  
+//         printf("不能被3，5，7任一个整除。\n");  
+//     }  
   
-    return 0;  
-}
+//     return 0;  
+// }
+
+// #include <stdio.h>  
+  
+// int main() {  
+//     int a, b, c;  
+//     int max;  
+  
+//     // 从用户那里获取三个整数的输入  
+//     printf("请输入三个整数a, b, c: ");  
+//     scanf("%d %d %d", &a, &b, &c);  
+  
+//     // 初始假设第一个数a是最大的  
+//     max = a;  
+  
+//     // 使用if-else语句来比较并找出最大的数  
+//     if (b > max) {  
+//         max = b; // 如果b比max大，则更新max为b  
+//     }  
+//     if (c > max) {  
+//         max = c; // 如果c比max大，则更新max为c  
+//     }  
+  
+//     // 输出最大的数  
+//     printf("三个数中的最大数是: %d\n", max);  
+  
+//     return 0;  
+// }
+
+
+
+// #include <stdio.h>  
+// #include <ctype.h> // 包含isalpha和isdigit函数  
+  
+// int main() {  
+//     char inputChar;  
+  
+//     // 从键盘接收一个字符  
+//     printf("请输入一个字符：");  
+//     scanf("%c", &inputChar);  
+  
+//     // 检查字符是否为字母  
+//     if (isalpha(inputChar)) {  
+//         // 如果是字母，输出其对应的ASCII码  
+//         printf("输入的字符是字母，其ASCII码是：%d\n", inputChar);  
+//     } else if (isdigit(inputChar)) {  
+//         // 如果是数字，按原样输出  
+//         printf("输入的字符是数字：%c\n", inputChar);  
+//     } else {  
+//         // 如果既不是字母也不是数字，给出提示信息  
+//         printf("输入错误！\n");  
+//     }  
+  
+//     return 0;  
+// }
+
+
+
+// #include <stdio.h>  
+  
+// int main() {  
+//     int a, b, c;  
+//     int max;  
+  
+//     // 从键盘读取三个整数的值  
+//     printf("请输入三个整数a, b, c: ");  
+//     scanf("%d %d %d", &a, &b, &c);  
+  
+//     // 使用if-else语句比较三个数，找出最大的数  
+//     max = a; // 初始假设a是最大的  
+//     if (b > max) {  
+//         max = b; // 如果b比max大，则max为b  
+//     }  
+//     if (c > max) {  
+//         max = c; // 如果c比max大，则max为c  
+//     }  
+  
+//     // 输出最大的数  
+//     printf("三个数中最大的数是: %d\n", max);  
+  
+//     return 0;  
+// }
+
+// #include<stdio.h>
+// //需要引入的文件
+// //如提示运行通过，但解题失败，认真对比预期输出和实际输出之间的差异
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main(){
+// 	int x, y;
+
+// 	scanf("%d", &x);
+// 	if(x < 1){
+// 		y = x;
+//     printf("y=x=%d\n", y);
+
+// 	}
+// 	else if(x >= 1 && x < 10){
+// 		y = 2 * x -1;
+//     printf("y=2*x-1=%d\n", y);
+// 	}
+// 	else{
+// 		y = 3 * x - 11;
+//     printf("y=3*x-11=%d\n", y);
+// 	}
+
+
+// 	return 0;
+// }
