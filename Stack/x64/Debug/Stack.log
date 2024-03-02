@@ -1,4 +1,4 @@
-﻿  Stack.c
-  test.c
-  正在生成代码...
+﻿  Queue.c
+D:\code\legend\Stack\Queue.c(23,7): warning C4133: “=”: 从“Queue *”到“QNode *”的类型不兼容
+D:\code\legend\Stack\Queue.c(21,10): warning C4133: “初始化”: 从“QueueNode *”到“Queue *”的类型不兼容
   Stack.vcxproj -> D:\code\legend\Stack\x64\Debug\Stack.exe
