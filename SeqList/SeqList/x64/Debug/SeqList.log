@@ -1,6 +1,0 @@
-﻿  ConTest.c
-  Contact.c
-  SeqList.c
-D:\code\legend\SeqList\SeqList\SeqList.c(19,10): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“SLDataType”
-  正在生成代码...
-  SeqList.vcxproj -> D:\code\legend\SeqList\x64\Debug\SeqList.exe

@@ -1,4 +1,0 @@
-﻿  源.c
-D:\code\legend\课设\课设\源.c(56,9): warning C4013: “strcmp”未定义；假设外部返回 int
-D:\code\legend\课设\课设\源.c(28,6): warning C4101: “i”: 未引用的局部变量
-  课设.vcxproj -> D:\code\legend\课设\x64\Debug\课设.exe
