@@ -47,13 +47,14 @@ void AdjustUp(HPDataType* a, int child)
 void AdjustDown(HPDataType* a, int n, int parent)
 {
 	int child = parent * 2 + 1;//假设左孩子
-	if (a[child] > a[child + 1])
-	{
-		child++;
-	}
+	
 	while (child <n)
 	{
-		if (a[parent] < a[child])
+		if (child + 1 < n && a[child] > a[child + 1])//?
+		{
+			child++;
+		}
+		if (a[parent] > a[child])
 		{
 			Swap(&a[parent], &a[child]);
 			parent = child;
@@ -116,4 +117,23 @@ bool HeapEmpty(Heap* hp)
 {
 	assert(hp);
 	return hp->size == 0;
+}
+
+
+// 对数组进行堆排序
+void HeapSort(int* a, int n)
+{
+	//建大堆
+	for (int i = (n - 1 - 1) / 2; i >= 0; i--)
+	{
+		AdjustDown(a, n, i);
+	}
+
+	int end = n - 1;
+	while (end > 0)
+	{
+		Swap(&a[0], &a[end]);
+		AdjustDown(a, end, 0);
+		end--;
+	}
 }

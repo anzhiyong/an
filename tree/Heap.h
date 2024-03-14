@@ -26,3 +26,5 @@ int HeapSize(Heap* hp);
 // 堆的判空
 bool HeapEmpty(Heap* hp);
 
+// 对数组进行堆排序
+void HeapSort(int* a, int n);
