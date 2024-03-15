@@ -28,3 +28,6 @@ bool HeapEmpty(Heap* hp);
 
 // 对数组进行堆排序
 void HeapSort(int* a, int n);
+
+//TopK
+void PrintTopK();

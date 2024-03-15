@@ -20,7 +20,7 @@ void HeapDestory(Heap* hp)
 	hp->capacity = 0;
 }
 
-void Swap(HPDataType* px, HPDataType* py)
+void Swap(HPDataType* px, HPDataType* py)//&&&&&&&!!!!!
 {
 	HPDataType tmp = *px;
 	*px = *py;
@@ -50,11 +50,11 @@ void AdjustDown(HPDataType* a, int n, int parent)
 	
 	while (child <n)
 	{
-		if (child + 1 < n && a[child] > a[child + 1])//?
+		if (child + 1 < n && a[child + 1] < a[child])//大堆选大的孩子
 		{
 			child++;
 		}
-		if (a[parent] > a[child])
+		if (a[child] < a[parent])  //孩子大就是大堆，孩子小就是小堆
 		{
 			Swap(&a[parent], &a[child]);
 			parent = child;
@@ -130,10 +130,110 @@ void HeapSort(int* a, int n)
 	}
 
 	int end = n - 1;
-	while (end > 0)
+	while (end>0)
 	{
 		Swap(&a[0], &a[end]);
 		AdjustDown(a, end, 0);
 		end--;
 	}
+}
+
+
+
+
+void PrintTopK()
+{
+	int k;
+	scanf("%d", &k);
+	//const char* file = "D:\\Code\\legend\\tree\\data.txt";
+
+	//1.打开文件
+	FILE* fout = fopen("D:\\Code\\legend\\tree\\data.txt", "r");
+	if (fout == NULL)
+	{
+		perror("fopen:fail");
+		return -1;
+	}
+	int val = 0;
+	//2.开辟数组用来存小堆
+	int* minheap = (int*)malloc(sizeof(int) * k);
+	if (minheap == NULL)
+	{
+		perror("malloc:fail");
+		return -1;
+	}
+	//3.读取k个数据到数组
+	for (int i = 0; i < k; i++)
+	{
+		fscanf(fout, "%d", &minheap[i]);
+	}
+
+	//4.建小堆
+	for (int i = (k - 1 - 1) / 2; i >= 0; i--)
+	{
+		AdjustDown(minheap, k, i);
+	}
+	int x = 0;
+	while (fscanf(fout, "%d", &x) != EOF)
+	{
+		//5. 读取剩余数据，比堆顶的值大，就替换他进堆
+		if (x > minheap[0])
+		{
+			minheap[0] = x;
+			AdjustDown(minheap, k, 0);
+		}
+	}
+
+	for (int i = 0; i < k; i++)
+	{
+		printf("%d ", minheap[i]);
+	}
+
+	fclose(fout);
+}
+
+
+void TopK()
+{
+	int k = 0;
+	scanf("%d", &k);
+	FILE* fout = fopen("D:\\Code\\legend\\tree\\data.txt", "r");
+	if (fout == NULL)
+	{
+		perror("fopen:file");
+		return -1;
+	}
+	int* minheap = (int*)malloc(sizeof(int) * k);
+	if (minheap == NULL)
+	{
+		perror("malloc:fail");
+		return -1;
+	}
+	for (int i = 0; i < k; i++)
+	{
+		fscanf(fout, "%d", &minheap[i]);
+	}
+	//建小堆
+	for (int i = (k - 2) / 2; i >= 0; i--)
+	{
+		AdjustDown(minheap, k, i);
+	}
+	int x = 0;
+	while ((fscanf(fout,"%d",&x)) != -1)
+	{
+		if (x > minheap[0])
+		{
+			minheap[0] = x;
+			AdjustDown(minheap, k, 0);
+
+		}
+	}
+	for (int i = 0; i < k; i++)
+	{
+		printf("%d ", minheap[i]);
+	}
+
+
+
+	fclose(fout);
 }

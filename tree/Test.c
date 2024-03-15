@@ -58,46 +58,11 @@ void CreateNDate()
 }
 
 
-void PrintTopK()
-{
-	int k;
-	scanf("%d", &k);
-	const char* file = "D:\\Code\\legend\\tree\\data.txt";
-	FILE* cost = fopen(file, "r");
-	int val = 0;
-	int* minheap = (int*)malloc(sizeof(int) * k);
-	for (int i = 0; i < 10; i++)
-	{
-		fscanf(cost, "%d", &minheap[i]);
-	}
 
-	//建小堆
-	for (int i = (k - 1 - 1) / 2; i >= 0; i--)
-	{
-		AdjustDown(minheap, k, i);
-	}
-
-	int x = 0;
-	while (fscanf(cost, "%d", &x) != EOF)
-	{
-		// 读取剩余数据，比堆顶的值大，就替换他进堆
-		if (x > minheap[0])
-		{
-			minheap[0] = x;
-			AdjustDown(minheap, k, 0);
-		}
-	}
-
-	for (int i = 0; i < k; i++)
-	{
-		printf("%d ", minheap[i]);
-	}
-
-	fclose(cost);
-}
 int main()
 {
 	
 	PrintTopK();
+	//TopK();
 	return 0;
 }
