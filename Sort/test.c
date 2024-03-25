@@ -8,7 +8,7 @@ void TestSort()
 	int a[] = { 5, 3, 9, 6, 2, 4, 7, 1, 8 };
 	PrintArray(a, sizeof(a) / sizeof(int));
 
-	BubbleSort(a, sizeof(a) / sizeof(int));
+	SelectSort(a, sizeof(a) / sizeof(int));
 
 	PrintArray(a, sizeof(a) / sizeof(int));
 }
